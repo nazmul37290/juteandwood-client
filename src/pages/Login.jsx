@@ -1,18 +1,18 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash, FaGithub, FaSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../provider/AuthProvider";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { flushSync } from "react-dom";
+
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
-  const { loginWithEmailandPassword, loginWithGoogleAccount } =
+  const { loginWithEmailandPassword, loginWithGoogleAccount, loginWithGithub } =
     useContext(AuthContext);
   //   handle email login
   const handleEmailLogin = (e) => {
@@ -33,7 +33,7 @@ const Login = () => {
         setError(error.message);
       });
   };
-
+  // handle google login
   const handleGoogleLogin = () => {
     setLoader(true);
     loginWithGoogleAccount()
@@ -46,6 +46,21 @@ const Login = () => {
       .catch((error) => {
         setLoader(false);
         console.log(error);
+      });
+  };
+
+  //   handle github login
+
+  const handleGithubLogin = () => {
+    setLoader(true);
+    loginWithGithub()
+      .then((result) => {
+        console.log(result.user);
+        setLoader(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoader(false);
       });
   };
   return (
@@ -153,6 +168,7 @@ const Login = () => {
                           </button>
                           <button
                             type="button"
+                            onClick={handleGithubLogin}
                             className="flex items-center justify-center gap-2 mx-auto w-1/2 font-bold rounded border-2 border-danger px-6 pb-[6px] pt-2 text-base  uppercase"
                           >
                             <FaGithub className="text-xl"></FaGithub> GITHUB

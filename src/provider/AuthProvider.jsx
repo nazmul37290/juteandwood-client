@@ -10,6 +10,7 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
+  GithubAuthProvider,
 } from "firebase/auth";
 
 export const AuthContext = createContext(null);
@@ -43,6 +44,14 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
+
+  //   sign in with github
+
+  const githubProvider = new GithubAuthProvider();
+  const loginWithGithub = () => {
+    setLoading(true);
+    return signInWithPopup(auth, githubProvider);
+  };
   //   observer for user
   useEffect(() => {
     const unSubscriber = onAuthStateChanged(auth, (currentUser) => {
@@ -65,6 +74,7 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     loginWithEmailandPassword,
     loginWithGoogleAccount,
+    loginWithGithub,
   };
   return (
     <>

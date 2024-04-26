@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import "../index.css";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Tooltip } from "react-tooltip";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -83,8 +84,11 @@ const Navbar = () => {
       {user ? (
         <div className="hidden md:flex navbar-end  gap-2">
           <div className="w-12 h-12 rounded-full">
+            <Tooltip anchorSelect=".my-anchor-element" place="top">
+              {user.displayName}
+            </Tooltip>
             <img
-              className="rounded-full w-full h-full"
+              className="rounded-full my-anchor-element w-full h-full"
               src={user && user.photoURL}
               alt="profile"
             />
