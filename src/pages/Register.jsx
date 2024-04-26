@@ -162,13 +162,10 @@ const Register = () => {
                         className="btn mt-4 font-bold text-lg w-full bg-[#ad9773] text-white"
                         value="Register"
                       />
-                      {/* <!--Forgot password link--> */}
-
-                      <a href="#!">Forgot password?</a>
 
                       <br />
                       {/* <!--Register button--> */}
-                      <div className="flex items-center justify-between pb-6">
+                      <div className="flex items-center justify-between mt-2 pb-6">
                         <p className="mb-0 mr-2">Have an account?</p>
                         <Link to={"/login"}>
                           <button
