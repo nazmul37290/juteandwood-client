@@ -1,43 +1,62 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub, FaSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../provider/AuthProvider";
-import Swal from "sweetalert2";
+
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { flushSync } from "react-dom";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const [loader, setLoader] = useState(false);
   const navigate = useNavigate();
-  const { loginWithEmailandPassword } = useContext(AuthContext);
+  const { loginWithEmailandPassword, loginWithGoogleAccount } =
+    useContext(AuthContext);
+  //   handle email login
   const handleEmailLogin = (e) => {
     e.preventDefault();
+    setLoader(true);
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     loginWithEmailandPassword(email, password)
       .then((result) => {
+        setLoader(false);
         console.log(result.user);
         navigate("/");
-        Swal.fire({
-          title: "Logged In Successfully",
-          //   text: "Do you want to continue",
-          icon: "success",
-          confirmButtonText: "Okay!",
-        });
+        toast.success("logged In successfully");
       })
       .catch((error) => {
+        setLoader(false);
+        setError(error.message);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    setLoader(true);
+    loginWithGoogleAccount()
+      .then((result) => {
+        console.log(result.user);
+        setLoader(false);
+        toast.success("logged In successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        setLoader(false);
         console.log(error);
       });
   };
   return (
     <section className="min-h-screen bg-[#ded5c7] dark:bg-neutral-700 ">
-      {/* <div
+      <div
         className={`absolute left-[50%] top-[50%]  flex items-center justify-center ${
-          loading ? "block" : "hidden"
+          loader ? "block" : "hidden"
         }`}
       >
         <span className="loading loading-spinner loading-lg"></span>
-      </div> */}
+      </div>
       <div className="container mx-auto w-1/2 h-full p-10">
         <div className=" flex w-full h-full items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
@@ -48,11 +67,6 @@ const Login = () => {
                   <div className="md:mx-6 md:p-12">
                     {/* <!--Logo--> */}
                     <div className="text-center ">
-                      {/* <img
-                        className="mx-auto w-48"
-                        src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                        alt="logo"
-                      /> */}
                       <h4 className="mb-12 mt-1 pb-1 text-2xl font-bold">
                         Jute&Wood
                       </h4>
@@ -131,6 +145,7 @@ const Login = () => {
                         <p className="text-center font-bold">OR</p>
                         <div className="flex flex-col gap-2">
                           <button
+                            onClick={handleGoogleLogin}
                             type="button"
                             className="font-bold flex items-center justify-center gap-2 text-base  mx-auto w-1/2 rounded border-2 border-danger px-6 pb-[6px] pt-2  "
                           >

@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AddCrafts from "../pages/AddCrafts";
 import MyCrafts from "../pages/MyCrafts";
+import PrivateRoutes from "./PrivateRoutes";
 
 const Routes = createBrowserRouter([
   {
@@ -22,11 +23,19 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/addCrafts",
-        element: <AddCrafts></AddCrafts>,
+        element: (
+          <PrivateRoutes>
+            <AddCrafts></AddCrafts>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/myCrafts",
-        element: <MyCrafts></MyCrafts>,
+        element: (
+          <PrivateRoutes>
+            <MyCrafts></MyCrafts>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/login",

@@ -43,7 +43,7 @@ const Register = () => {
             setLoading(false);
             navigate("/login");
             Swal.fire({
-              title: "New User Added Successfully",
+              title: "Registered Successfully",
               //   text: "Do you want to continue",
               icon: "success",
               confirmButtonText: "Okay!",

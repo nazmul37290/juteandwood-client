@@ -1,6 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import "../index.css";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const links = (
     <>
       <li>
@@ -69,17 +80,36 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 font-bold">{links}</ul>
       </div>
-      <div className="hidden md:flex navbar-end  gap-2">
-        <Link to={"/login"} className="btn bg-[#bdac8f] text-white font-bold">
-          Login{" "}
-        </Link>
-        <Link
-          to={"/register"}
-          className="btn  text-white font-bold bg-[#bdac8f]"
-        >
-          Register
-        </Link>
-      </div>
+      {user ? (
+        <div className="hidden md:flex navbar-end  gap-2">
+          <div className="w-12 h-12 rounded-full">
+            <img
+              className="rounded-full w-full h-full"
+              src={user && user.photoURL}
+              alt="profile"
+            />
+          </div>
+          <button
+            onClick={handleLogOut}
+            className="btn bg-[#bdac8f] text-white font-bold"
+          >
+            Logout
+          </button>
+        </div>
+      ) : (
+        <div className="hidden md:flex navbar-end  gap-2">
+          <Link to={"/login"} className="btn bg-[#bdac8f] text-white font-bold">
+            Login{" "}
+          </Link>
+          <Link
+            to={"/register"}
+            className="btn  text-white font-bold bg-[#bdac8f]"
+          >
+            Register
+          </Link>
+        </div>
+      )}
+
       {/* <div className="flex md:hidden navbar-end gap-2">
         <Link className="btn">sign up</Link>
         <Link className="btn">signin</Link>
