@@ -1,21 +1,26 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Register = () => {
-  const { registerWithEmail } = useContext(AuthContext);
+  const { registerWithEmail, logOut, updateUserProfile } =
+    useContext(AuthContext);
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const handleEmailRegister = (e) => {
     e.preventDefault();
+
     setError("");
     const form = e.target;
     const name = form.name.value;
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-    const registerUser = { name, photoURL, email, password };
+
     if (password.length < 6) {
       setError("password must be more than 6 characters");
       return;
@@ -26,16 +31,41 @@ const Register = () => {
       setError("must have a capital letter");
       return;
     }
-
-    console.log(registerUser);
+    setLoading(true);
     registerWithEmail(email, password)
       .then((result) => {
         console.log(result.user);
+        updateUserProfile(name, photoURL)
+          .then((result) => console.log(result))
+          .catch((error) => console.log(error));
+        logOut()
+          .then(() => {
+            setLoading(false);
+            navigate("/login");
+            Swal.fire({
+              title: "New User Added Successfully",
+              //   text: "Do you want to continue",
+              icon: "success",
+              confirmButtonText: "Okay!",
+            });
+            form.reset();
+          })
+          .catch((error) => console.log(error));
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
   };
   return (
-    <section className="min-h-screen bg-[#ded5c7] dark:bg-neutral-700">
+    <section className="min-h-screen bg-[#ded5c7] dark:bg-neutral-700 ">
+      <div
+        className={`absolute left-[50%] top-[50%]  flex items-center justify-center ${
+          loading ? "block" : "hidden"
+        }`}
+      >
+        <span className="loading loading-spinner loading-lg"></span>
+      </div>
       <div className="container mx-auto w-1/2 h-full p-10">
         <div className=" flex w-full h-full items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
@@ -69,6 +99,7 @@ const Register = () => {
                         type="text"
                         name="name"
                         id=""
+                        required
                         placeholder="enter your name"
                       />
                       <br />
@@ -80,6 +111,7 @@ const Register = () => {
                         type="text"
                         name="photoURL"
                         id=""
+                        required
                         placeholder="enter your photoURL"
                       />
                       <br />
@@ -91,6 +123,7 @@ const Register = () => {
                         type="email"
                         name="email"
                         id=""
+                        required
                         placeholder="enter your email"
                       />
                       <br />
@@ -103,6 +136,7 @@ const Register = () => {
                           type={showPassword ? "text" : "password"}
                           name="password"
                           id=""
+                          required
                           placeholder="enter your password"
                         />
                         <div className="absolute right-3 mb-2 text-lg">
