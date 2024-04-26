@@ -1,8 +1,41 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
+  const { registerWithEmail } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const handleEmailRegister = (e) => {
+    e.preventDefault();
+    setError("");
+    const form = e.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const registerUser = { name, photoURL, email, password };
+    if (password.length < 6) {
+      setError("password must be more than 6 characters");
+      return;
+    } else if (!/[a-z]/.test(password)) {
+      setError("must have a small letter");
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setError("must have a capital letter");
+      return;
+    }
+
+    console.log(registerUser);
+    registerWithEmail(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
-    <section className="min-h-screen bg-neutral-200 dark:bg-neutral-700">
+    <section className="min-h-screen bg-[#ded5c7] dark:bg-neutral-700">
       <div className="container mx-auto w-1/2 h-full p-10">
         <div className=" flex w-full h-full items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
@@ -23,7 +56,7 @@ const Register = () => {
                       </h4>
                     </div>
 
-                    <form>
+                    <form onSubmit={handleEmailRegister}>
                       <p className="mb-4 text-center font-bold text-xl">
                         Please register an account
                       </p>
@@ -64,14 +97,30 @@ const Register = () => {
                       {/* <!--Password input--> */}
                       <label className="font-semibold">Your Password</label>
                       <br />
-                      <input
-                        className="p-2 border w-full mb-2 rounded-md"
-                        type="password"
-                        name="password"
-                        id=""
-                        placeholder="enter your password"
-                      />
+                      <div className="flex items-center relative">
+                        <input
+                          className="p-2 border w-full mb-2 rounded-md"
+                          type={showPassword ? "text" : "password"}
+                          name="password"
+                          id=""
+                          placeholder="enter your password"
+                        />
+                        <div className="absolute right-3 mb-2 text-lg">
+                          {showPassword ? (
+                            <FaEyeSlash
+                              onClick={() => setShowPassword(false)}
+                            ></FaEyeSlash>
+                          ) : (
+                            <FaEye
+                              onClick={() => setShowPassword(true)}
+                            ></FaEye>
+                          )}
+                        </div>
+                      </div>
                       <br />
+                      {/* show error messsage */}
+                      <p className="text-red-500">{error}</p>
+
                       {/* <!--Submit button--> */}
 
                       <input
