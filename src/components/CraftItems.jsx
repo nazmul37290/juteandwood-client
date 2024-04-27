@@ -1,4 +1,5 @@
 import Card from "./Card";
+import PropTypes from "prop-types";
 
 const CraftItems = ({ items }) => {
   return (
@@ -14,3 +15,7 @@ const CraftItems = ({ items }) => {
 };
 
 export default CraftItems;
+
+CraftItems.propTypes = {
+  items: PropTypes.array,
+};

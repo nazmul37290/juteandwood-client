@@ -155,7 +155,7 @@ const AddCrafts = () => {
                           Paper Quilling & Origami
                         </option>
                         <option value="Glass Painting">Glass Painting</option>
-                        <option value="Lamp Working">Lamp working</option>
+                        <option value="Lampworking">Lampworking</option>
                         <option value="Glass Dying and staining">
                           Glass Dying & Staining
                         </option>
@@ -205,8 +205,8 @@ const AddCrafts = () => {
                         className="p-2 border w-full mb-2 rounded-md"
                         id=""
                       >
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                       </select>
                       <br />
                       {/* processing related input */}
@@ -231,8 +231,8 @@ const AddCrafts = () => {
                         className="p-2 border w-full mb-2 rounded-md"
                         id=""
                       >
-                        <option value="in Stock">In Stock</option>
-                        <option value="made to order">Made to order</option>
+                        <option value="In Stock">In Stock</option>
+                        <option value="Made to order">Made to order</option>
                       </select>
                       {/* show error messsage
                       <p className="text-red-500">{error}</p> */}

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 const Card = ({ item }) => {
   return (
     <div className="w-[300px] mx-auto md:w-[350px] h-[480px] rounded-2xl bg-[#efeae3]">
@@ -54,3 +54,7 @@ const Card = ({ item }) => {
 };
 
 export default Card;
+
+Card.propTypes = {
+  item: PropTypes.object,
+};
