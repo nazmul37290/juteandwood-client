@@ -1,3 +1,4 @@
+import CraftItems from "../components/CraftItems";
 import Slider from "../components/Slider";
 
 const Homepage = () => {
@@ -6,6 +7,7 @@ const Homepage = () => {
       <div className="h-auto lg:h-[800px]">
         <Slider></Slider>
       </div>
+      <CraftItems></CraftItems>
     </div>
   );
 };

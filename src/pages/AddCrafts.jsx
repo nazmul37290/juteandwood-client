@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddCrafts = () => {
-  const [error, setError] = useState("");
   const { user } = useContext(AuthContext);
-
+  const [loader, setLoader] = useState(false);
   const handleAddCrafts = (e) => {
     e.preventDefault();
+    setLoader(true);
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
@@ -34,16 +35,37 @@ const AddCrafts = () => {
       stockStatus,
     };
     console.log(item);
+
+    fetch("http://localhost:4000/items", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(item),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          setLoader(false);
+          Swal.fire({
+            title: "Item Added Successfully",
+
+            icon: "success",
+            confirmButtonText: "Okay!",
+          });
+          form.reset();
+        }
+      });
   };
   return (
     <section className="min-h-screen bg-[#ded5c7] dark:bg-neutral-700 ">
-      {/* <div
+      <div
         className={`absolute left-[50%] top-[50%]  flex items-center justify-center ${
-          loading ? "block" : "hidden"
+          loader ? "block" : "hidden"
         }`}
       >
         <span className="loading loading-spinner loading-lg"></span>
-      </div> */}
+      </div>
       <div className="container mx-auto w-1/2 h-full p-10">
         <div className=" flex w-full h-full items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
@@ -121,14 +143,23 @@ const AddCrafts = () => {
                       <label className="font-semibold">Subcategory Name</label>
 
                       <br />
-                      <input
+                      <select
                         className="p-2 border w-full mb-2 rounded-md"
-                        type="text"
                         name="subcategoryName"
                         id=""
                         required
-                        placeholder="enter subcategory"
-                      />
+                      >
+                        <option value="card">Card</option>
+                        <option value="scrapbooking">scrapbooking</option>
+                        <option value="PaperQuillingAndOrigami ">
+                          Paper Quilling & Origami
+                        </option>
+                        <option value="glassPainting">Glass Painting</option>
+                        <option value="lampWorking">Lamp working</option>
+                        <option value="glassDyingAndStaining">
+                          Glass Dying & Staining
+                        </option>
+                      </select>
                       <br />
                       <label className="font-semibold">Short Description</label>
                       <textarea
@@ -187,7 +218,7 @@ const AddCrafts = () => {
                         name="processingTime"
                         id=""
                         required
-                        placeholder="processing time"
+                        placeholder="processing time in min"
                       />
                       <br />
 
@@ -203,8 +234,8 @@ const AddCrafts = () => {
                         <option value="in Stock">In Stock</option>
                         <option value="made to order">Made to order</option>
                       </select>
-                      {/* show error messsage */}
-                      <p className="text-red-500">{error}</p>
+                      {/* show error messsage
+                      <p className="text-red-500">{error}</p> */}
 
                       {/* <!--Submit button--> */}
 

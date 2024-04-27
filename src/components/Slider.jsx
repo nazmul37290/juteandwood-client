@@ -1,5 +1,6 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Typewriter } from "react-simple-typewriter";
 
 // Import Swiper styles
 import "swiper/css";
@@ -20,7 +21,7 @@ const Slider = () => {
         effect={"fade"}
         navigation={true}
         autoplay={{
-          delay: 4000,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         speed={1000}
@@ -37,7 +38,22 @@ const Slider = () => {
             <div className="absolute translateHeight w-full  ">
               <div>
                 <h2 className="text-xl md:text-5xl font-bold text-center mb-4 text-[#efeae3]">
-                  Greeting Cards
+                  <span style={{ color: "white", fontWeight: "bold" }}>
+                    {/* Style will be inherited from the parent element */}
+                    <Typewriter
+                      words={[
+                        "Greeting Cards",
+                        "Greeting Cards",
+                        "Greeting Cards",
+                      ]}
+                      loop={5}
+                      cursor
+                      cursorStyle=""
+                      typeSpeed={70}
+                      deleteSpeed={100}
+                      delaySpeed={1000}
+                    />
+                  </span>
                 </h2>
                 <p className="md:w-[650px] mx-auto text-center text-[#efeae3]">
                   Greeting cards are timeless tokens of sentiment, often
@@ -62,7 +78,22 @@ const Slider = () => {
             <div className="absolute translateHeight w-full  ">
               <div>
                 <h2 className="text-xl md:text-5xl font-bold text-center mb-4 text-[#efeae3]">
-                  Glass Painting
+                  <span style={{ color: "white", fontWeight: "bold" }}>
+                    {/* Style will be inherited from the parent element */}
+                    <Typewriter
+                      words={[
+                        "Glass Painting",
+                        "Glass Painting",
+                        "Glass Painting",
+                      ]}
+                      loop={5}
+                      cursor
+                      cursorStyle=""
+                      typeSpeed={70}
+                      deleteSpeed={100}
+                      delaySpeed={1000}
+                    />
+                  </span>
                 </h2>
                 <p className="md:w-[650px] mx-auto text-center text-[#efeae3]">
                   Glass painting is a captivating craft that transforms plain
@@ -91,7 +122,18 @@ const Slider = () => {
             <div className="absolute translateHeight w-full  ">
               <div>
                 <h2 className="text-xl md:text-5xl font-bold text-center mb-4 text-[#efeae3]">
-                  Scrapbooking
+                  <span style={{ color: "white", fontWeight: "bold" }}>
+                    {/* Style will be inherited from the parent element */}
+                    <Typewriter
+                      words={["Scrapbooking", "Scrapbooking", "Scrapbooking"]}
+                      loop={5}
+                      cursor
+                      cursorStyle=""
+                      typeSpeed={70}
+                      deleteSpeed={100}
+                      delaySpeed={1000}
+                    />
+                  </span>
                 </h2>
                 <p className="md:w-[650px] mx-auto text-center text-[#efeae3]">
                   Scrapbooking is a cherished craft that transforms ordinary
