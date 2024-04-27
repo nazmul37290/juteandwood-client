@@ -1,16 +1,18 @@
+import { Link } from "react-router-dom";
+
 const Card = ({ item }) => {
   return (
-    <div className="w-[300px] mx-auto md:w-[350px] h-[450px] rounded-2xl bg-[#efeae3]">
+    <div className="w-[300px] mx-auto md:w-[350px] h-[480px] rounded-2xl bg-[#efeae3]">
       {/* upper side */}
-      <div className="bg-[#ded5c7] rounded-2xl w-full h-1/2">
-        <div className=" mx-auto p-4 h-[250px] w-[250px] lg:w-[350px] relative">
+      <div className="bg-[#ded5c7] rounded-2xl w-full relative">
+        <div className=" mx-auto p-4 h-[220px] lg:h-[250px] w-[300px] lg:w-[350px] ">
           <img
             className="w-full rounded-2xl
                h-full"
             src={item.photo}
             alt=""
           />
-          <p className="bg-green-600 text-white font-bold p-1 absolute top-4 right-4 rounded-xl max-w-fit">
+          <p className="bg-green-600 text-white font-bold px-2 py-1 absolute top-4 right-4 rounded-lg max-w-fit">
             {item.stockStatus}
           </p>
         </div>
@@ -39,9 +41,11 @@ const Card = ({ item }) => {
             </div>
           </div>
           <div className="">
-            <button className="btn mt-4 bg-[#ad9773] text-white font-bold">
-              View Details
-            </button>
+            <Link to={`items/${item._id}`}>
+              <button className="btn mt-4 bg-[#ad9773] text-white font-bold">
+                View Details
+              </button>
+            </Link>
           </div>
         </div>
       </div>

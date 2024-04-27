@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import AddCrafts from "../pages/AddCrafts";
 import MyCrafts from "../pages/MyCrafts";
 import PrivateRoutes from "./PrivateRoutes";
+import ItemDetails from "../pages/ItemDetails";
 
 const Routes = createBrowserRouter([
   {
@@ -45,6 +46,16 @@ const Routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/items/:id",
+        element: (
+          <PrivateRoutes>
+            <ItemDetails></ItemDetails>
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:4000/items/${params.id}`),
       },
     ],
   },
