@@ -7,7 +7,9 @@ const Homepage = () => {
       <div className="h-auto lg:h-[800px]">
         <Slider></Slider>
       </div>
-      <CraftItems></CraftItems>
+      <div className="max-w-6xl mx-auto">
+        <CraftItems></CraftItems>
+      </div>
     </div>
   );
 };
