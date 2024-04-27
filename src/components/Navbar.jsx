@@ -71,7 +71,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold"
+            className="menu menu-sm dropdown-content mt-3  p-2 shadow bg-white text-black  z-10 rounded-box w-52 font-bold"
           >
             {links}
           </ul>
@@ -113,11 +113,6 @@ const Navbar = () => {
           </Link>
         </div>
       )}
-
-      {/* <div className="flex md:hidden navbar-end gap-2">
-        <Link className="btn">sign up</Link>
-        <Link className="btn">signin</Link>
-      </div> */}
     </div>
   );
 };
