@@ -150,13 +150,13 @@ const AddCrafts = () => {
                         required
                       >
                         <option value="card">Card</option>
-                        <option value="scrapbooking">scrapbooking</option>
-                        <option value="PaperQuillingAndOrigami ">
+                        <option value="Scrapbooking">scrapbooking</option>
+                        <option value="Paper quilling and origami ">
                           Paper Quilling & Origami
                         </option>
-                        <option value="glassPainting">Glass Painting</option>
-                        <option value="lampWorking">Lamp working</option>
-                        <option value="glassDyingAndStaining">
+                        <option value="Glass Painting">Glass Painting</option>
+                        <option value="Lamp Working">Lamp working</option>
+                        <option value="Glass Dying and staining">
                           Glass Dying & Staining
                         </option>
                       </select>

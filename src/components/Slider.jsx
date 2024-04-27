@@ -46,7 +46,7 @@ const Slider = () => {
                         "Greeting Cards",
                         "Greeting Cards",
                       ]}
-                      loop={5}
+                      loop={100}
                       cursor
                       cursorStyle=""
                       typeSpeed={70}
@@ -86,7 +86,7 @@ const Slider = () => {
                         "Glass Painting",
                         "Glass Painting",
                       ]}
-                      loop={5}
+                      loop={100}
                       cursor
                       cursorStyle=""
                       typeSpeed={70}
@@ -126,7 +126,7 @@ const Slider = () => {
                     {/* Style will be inherited from the parent element */}
                     <Typewriter
                       words={["Scrapbooking", "Scrapbooking", "Scrapbooking"]}
-                      loop={5}
+                      loop={100}
                       cursor
                       cursorStyle=""
                       typeSpeed={70}
