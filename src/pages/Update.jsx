@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+
+import Swal from "sweetalert2";
 
 const Update = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
+  const [loader, setLoader] = useState(false);
   const item = useLoaderData();
   const {
     item_name,
@@ -18,16 +21,66 @@ const Update = () => {
     stockStatus,
   } = item;
 
-  const handleUpdateCrafts = () => {};
+  const handleUpdateCrafts = (e) => {
+    setLoader(true);
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const item_name = form.itemName.value;
+    const photo = form.photoURL.value;
+    const subcategory_Name = form.subcategoryName.value;
+    const description = form.description.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const customization = form.customization.value;
+    const processing_time = form.processingTime.value;
+    const stockStatus = form.stockStatus.value;
+
+    const updateItem = {
+      name,
+      email,
+      item_name,
+      photo,
+      subcategory_Name,
+      description,
+      price,
+      rating,
+      customization,
+      processing_time,
+      stockStatus,
+    };
+
+    fetch(`http://localhost:4000/items/update/${id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount) {
+          setLoader(false);
+          Swal.fire({
+            title: "Item Updated Successfully",
+
+            icon: "success",
+            confirmButtonText: "Okay!",
+          });
+          form.reset();
+        }
+      });
+  };
   return (
     <section className="min-h-screen bg-[#ded5c7] dark:bg-neutral-700 ">
-      {/* <div
+      <div
         className={`absolute left-[50%] top-[50%]  flex items-center justify-center ${
           loader ? "block" : "hidden"
         }`}
       >
         <span className="loading loading-spinner loading-lg"></span>
-      </div> */}
+      </div>
       <div className="container mx-auto w-1/2 h-full p-10">
         <div className=" flex w-full h-full items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
