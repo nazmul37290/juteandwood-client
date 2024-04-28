@@ -7,11 +7,13 @@ import Swal from "sweetalert2";
 const MyCrafts = () => {
   const { user } = useContext(AuthContext);
   const [myItems, setMyItems] = useState([]);
+  const [loader, setLoader] = useState(true);
   useEffect(() => {
     fetch(`http://localhost:4000/items/email/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyItems(data);
+        setLoader(false);
       });
   }, []);
   const handleDelete = (id) => {
@@ -49,17 +51,30 @@ const MyCrafts = () => {
   return (
     <div className="max-w-6xl mx-auto mt-5">
       <h2 className="text-3xl font-bold text-center">My Arts & crafts</h2>
-      <div className="mt-5 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {myItems.map((item) => {
-          return (
-            <MyCraftsCard
-              key={item._id}
-              handleDelete={handleDelete}
-              item={item}
-            ></MyCraftsCard>
-          );
-        })}
-      </div>
+
+      {myItems.length > 0 ? (
+        <>
+          <div className="mt-5 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            {myItems.map((item) => {
+              return (
+                <MyCraftsCard
+                  key={item._id}
+                  handleDelete={handleDelete}
+                  item={item}
+                ></MyCraftsCard>
+              );
+            })}
+          </div>
+        </>
+      ) : loader ? (
+        <div className="text-center mt-10">
+          <span className="loading loading-spinner loading-lg"></span>
+        </div>
+      ) : (
+        <p className="text-2xl mt-24 font-medium text-center">
+          You have not added any crafts yet !!!
+        </p>
+      )}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
+import PropTypes from "prop-types";
 import { MdDeleteForever } from "react-icons/md";
 const MyCraftsCard = ({ item, handleDelete }) => {
   return (
@@ -42,7 +43,7 @@ const MyCraftsCard = ({ item, handleDelete }) => {
             </div>
           </div>
           <div className="flex justify-around">
-            <Link to={`/items/${item._id}`}>
+            <Link to={`/items/update/${item._id}`}>
               <button className="btn mt-4 bg-green-600 text-white font-bold">
                 Update{" "}
                 <span className="text-base">
@@ -68,3 +69,8 @@ const MyCraftsCard = ({ item, handleDelete }) => {
 };
 
 export default MyCraftsCard;
+
+MyCraftsCard.propTypes = {
+  item: PropTypes.object,
+  handleDelete: PropTypes.func,
+};

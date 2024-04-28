@@ -33,18 +33,18 @@ const Slider = () => {
       >
         <SwiperSlide className="relative">
           <div className="bg-black ">
-            <img src="/cardmaking.jpg" className="opacity-40" />
+            <img src="/juteHomeDecor.jpg" className="opacity-40" />
 
             <div className="absolute translateHeight w-full  ">
               <div>
-                <h2 className="text-xl md:text-5xl font-bold text-center mb-4 text-[#efeae3]">
+                <h2 className="text-xl md:text-5xl font-bold text-center mb-4 uppercase text-[#efeae3]">
                   <span style={{ color: "white", fontWeight: "bold" }}>
                     {/* Style will be inherited from the parent element */}
                     <Typewriter
                       words={[
-                        "Greeting Cards",
-                        "Greeting Cards",
-                        "Greeting Cards",
+                        "Jute home decor",
+                        "Jute home decor",
+                        "Jute home decor",
                       ]}
                       loop={100}
                       cursor
@@ -56,11 +56,13 @@ const Slider = () => {
                   </span>
                 </h2>
                 <p className="md:w-[650px] mx-auto text-center text-[#efeae3]">
-                  Greeting cards are timeless tokens of sentiment, often
-                  exchanged to convey emotions ranging from love and gratitude
-                  to sympathy and celebration. These small pieces of folded
-                  paper hold the power to brighten someones day, strengthen
-                  relationships, and commemorate special occasions.
+                  Jute home decor offers a natural and eco-friendly way to add
+                  warmth, texture, and character to living spaces. Jute, a
+                  versatile and sustainable fiber derived from the jute plant,
+                  is prized for its durability, softness, and earthy appeal.
+                  From rugs and curtains to wall hangings and furniture, jute
+                  home decor items bring a touch of rustic charm and organic
+                  beauty to any room.
                 </p>
                 <div className="text-center mt-4 ">
                   <button className="btn text-lg bg-[#ad9773] text-white">
@@ -73,18 +75,18 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide className="relative ">
           <div className="bg-black ">
-            <img src="/glasspainting.jpg" className="opacity-40" />
+            <img src="/woodenkitchen.jpg" className="opacity-40" />
 
             <div className="absolute translateHeight w-full  ">
               <div>
-                <h2 className="text-xl md:text-5xl font-bold text-center mb-4 text-[#efeae3]">
+                <h2 className="text-xl uppercase md:text-5xl font-bold text-center mb-4 text-[#efeae3]">
                   <span style={{ color: "white", fontWeight: "bold" }}>
                     {/* Style will be inherited from the parent element */}
                     <Typewriter
                       words={[
-                        "Glass Painting",
-                        "Glass Painting",
-                        "Glass Painting",
+                        "Wooden kitchenware ",
+                        "Wooden kitchenware ",
+                        "Wooden kitchenware ",
                       ]}
                       loop={100}
                       cursor
@@ -96,15 +98,11 @@ const Slider = () => {
                   </span>
                 </h2>
                 <p className="md:w-[650px] mx-auto text-center text-[#efeae3]">
-                  Glass painting is a captivating craft that transforms plain
-                  glass surfaces into vibrant works of art. Whether creating
-                  stained glass windows, decorative ornaments, or intricate
-                  designs on glassware, this versatile medium offers endless
-                  possibilities for creativity and expression. Using specialized
-                  paints, brushes, and techniques, artists can adorn glass
-                  surfaces with intricate patterns, vivid colors, and
-                  captivating imagery, resulting in stunning pieces that capture
-                  the eye and inspire the imagination.
+                  Wooden kitchenware offers a timeless and organic aesthetic
+                  that adds warmth, charm, and functionality to any kitchen.
+                  Crafted from natural wood materials such as maple, cherry,
+                  walnut, and bamboo, wooden kitchenware items are prized for
+                  their durability, versatility, and eco-friendly appeal.
                 </p>
                 <div className="text-center mt-4 ">
                   <button className="btn text-lg bg-[#ad9773] text-white">
@@ -117,15 +115,15 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide className="relative ">
           <div className="bg-black ">
-            <img src="/scrapbooking.jpg" className="opacity-40" />
+            <img src="/woodenSculpture.jpg" className="opacity-40" />
 
             <div className="absolute translateHeight w-full  ">
               <div>
-                <h2 className="text-xl md:text-5xl font-bold text-center mb-4 text-[#efeae3]">
+                <h2 className="text-xl md:text-5xl font-bold text-center uppercase mb-4 text-[#efeae3]">
                   <span style={{ color: "white", fontWeight: "bold" }}>
                     {/* Style will be inherited from the parent element */}
                     <Typewriter
-                      words={["Scrapbooking", "Scrapbooking", "Scrapbooking"]}
+                      words={["Wooden sculptures", "Wooden sculptures"]}
                       loop={100}
                       cursor
                       cursorStyle=""
@@ -136,11 +134,10 @@ const Slider = () => {
                   </span>
                 </h2>
                 <p className="md:w-[650px] mx-auto text-center text-[#efeae3]">
-                  Scrapbooking is a cherished craft that transforms ordinary
-                  photographs, memorabilia, and mementos into treasured
-                  keepsakes. It offers a creative outlet for preserving
-                  memories, telling stories, and celebrating lifes moments, both
-                  big and small.
+                  Wooden sculptures are exquisite works of art crafted from wood
+                  through carving, shaping, and sculpting techniques. Dating
+                  back thousands of years, wooden sculpture has been a prominent
+                  form of artistic expression across cultures and civilizations.
                 </p>
                 <div className="text-center mt-4 ">
                   <button className="btn text-lg bg-[#ad9773] text-white">

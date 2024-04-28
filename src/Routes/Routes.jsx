@@ -8,11 +8,14 @@ import AddCrafts from "../pages/AddCrafts";
 import MyCrafts from "../pages/MyCrafts";
 import PrivateRoutes from "./PrivateRoutes";
 import ItemDetails from "../pages/ItemDetails";
+import ErrorPage from "../pages/ErrorPage";
+import Update from "../pages/Update";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -55,6 +58,12 @@ const Routes = createBrowserRouter([
             <ItemDetails></ItemDetails>
           </PrivateRoutes>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:4000/items/${params.id}`),
+      },
+      {
+        path: "/items/update/:id",
+        element: <Update></Update>,
         loader: ({ params }) =>
           fetch(`http://localhost:4000/items/${params.id}`),
       },

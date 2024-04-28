@@ -114,7 +114,7 @@ const AddCrafts = () => {
                         placeholder="enter your user email"
                       />
                       <br />
-                      {/* <!--Username input--> */}
+                      {/* <!--item name input--> */}
                       <label className="font-semibold">Item Name</label>
 
                       <br />
@@ -139,7 +139,7 @@ const AddCrafts = () => {
                         placeholder="enter your photoURL"
                       />
                       <br />
-                      {/* <!--Username input--> */}
+                      {/* <!--sub category input--> */}
                       <label className="font-semibold">Subcategory Name</label>
 
                       <br />
@@ -149,18 +149,25 @@ const AddCrafts = () => {
                         id=""
                         required
                       >
-                        <option value="card">Card</option>
-                        <option value="Scrapbooking">scrapbooking</option>
-                        <option value="Paper quilling and origami ">
-                          Paper Quilling & Origami
+                        <option value="Wooden Furniture & Sculptures">
+                          Wooden Furniture & Sculptures
                         </option>
-                        <option value="Glass Painting">Glass Painting</option>
-                        <option value="Lampworking">Lampworking</option>
-                        <option value="Glass Dying and staining">
-                          Glass Dying & Staining
+                        <option value="Wooden Home Decor">
+                          Wooden Home Decor
+                        </option>
+                        <option value="Wooden Utensils and Kitchenware">
+                          Wooden Utensils and Kitchenware
+                        </option>
+                        <option value="Jute Home Decor">Jute Home Decor</option>
+                        <option value="JuteKitchenware & utensils">
+                          JuteKitchenware & utensils
+                        </option>
+                        <option value="Jute and wooden jewellery">
+                          Jute and wooden jewellery
                         </option>
                       </select>
                       <br />
+                      {/* description input */}
                       <label className="font-semibold">Short Description</label>
                       <textarea
                         className="p-2 border w-full mb-2 rounded-md"
@@ -242,7 +249,7 @@ const AddCrafts = () => {
                       <input
                         type="submit"
                         className="btn mt-4 font-bold text-lg w-full bg-[#ad9773] text-white"
-                        value="Register"
+                        value="Add"
                       />
 
                       <br />
