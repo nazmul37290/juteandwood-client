@@ -23,10 +23,10 @@ const Login = () => {
     const password = form.password.value;
     loginWithEmailandPassword(email, password)
       .then((result) => {
-        setLoader(false);
         console.log(result.user);
         navigate("/");
         toast.success("logged In successfully");
+        setLoader(false);
       })
       .catch((error) => {
         setLoader(false);
@@ -39,9 +39,9 @@ const Login = () => {
     loginWithGoogleAccount()
       .then((result) => {
         console.log(result.user);
-        setLoader(false);
         toast.success("logged In successfully");
         navigate("/");
+        setLoader(false);
       })
       .catch((error) => {
         setLoader(false);
@@ -56,6 +56,9 @@ const Login = () => {
     loginWithGithub()
       .then((result) => {
         console.log(result.user);
+
+        toast.success("logged In successfully");
+        navigate("/");
         setLoader(false);
       })
       .catch((error) => {

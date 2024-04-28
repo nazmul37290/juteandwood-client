@@ -41,7 +41,7 @@ const Card = ({ item }) => {
             </div>
           </div>
           <div className="">
-            <Link to={`items/${item._id}`}>
+            <Link to={`/items/${item._id}`}>
               <button className="btn mt-4 bg-[#ad9773] text-white font-bold">
                 View Details
               </button>
