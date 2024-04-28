@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaEdit } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
-const MyCraftsCard = ({ item }) => {
-  console.log(item);
+const MyCraftsCard = ({ item, handleDelete }) => {
   return (
     <div className="w-[300px] mx-auto md:w-[350px] h-[480px] rounded-2xl bg-[#efeae3]">
       {/* upper side */}
@@ -52,7 +51,10 @@ const MyCraftsCard = ({ item }) => {
               </button>
             </Link>
 
-            <button className="btn mt-4 bg-red-500 text-white font-bold">
+            <button
+              onClick={() => handleDelete(item._id)}
+              className="btn mt-4 bg-red-500 text-white font-bold"
+            >
               Delete{" "}
               <span className="text-xl">
                 <MdDeleteForever></MdDeleteForever>
