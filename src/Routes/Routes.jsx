@@ -20,12 +20,14 @@ const Routes = createBrowserRouter([
       {
         path: "/",
         element: <Homepage></Homepage>,
-        loader: () => fetch("http://localhost:4000/items"),
+        loader: () =>
+          fetch("https://hero-assignment-10-server-side.vercel.app/items"),
       },
       {
         path: "/allArtsAndCrafts",
         element: <AllArtsAndCrafts></AllArtsAndCrafts>,
-        loader: () => fetch("http://localhost:4000/items"),
+        loader: () =>
+          fetch("https://hero-assignment-10-server-side.vercel.app/items"),
       },
       {
         path: "/addCrafts",
@@ -59,13 +61,21 @@ const Routes = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/items/${params.id}`),
+          fetch(
+            `https://hero-assignment-10-server-side.vercel.app/items/${params.id}`
+          ),
       },
       {
         path: "/items/update/:id",
-        element: <Update></Update>,
+        element: (
+          <PrivateRoutes>
+            <Update></Update>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:4000/items/${params.id}`),
+          fetch(
+            `https://hero-assignment-10-server-side.vercel.app/items/${params.id}`
+          ),
       },
     ],
   },

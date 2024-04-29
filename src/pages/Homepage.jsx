@@ -4,7 +4,7 @@ import Slider from "../components/Slider";
 
 const Homepage = () => {
   const items = useLoaderData();
-
+  console.log(items);
   return (
     <div>
       <div className="h-auto lg:h-[800px]">

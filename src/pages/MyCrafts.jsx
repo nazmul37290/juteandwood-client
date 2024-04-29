@@ -9,7 +9,9 @@ const MyCrafts = () => {
   const [myItems, setMyItems] = useState([]);
   const [loader, setLoader] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:4000/items/email/${user.email}`)
+    fetch(
+      `https://hero-assignment-10-server-side.vercel.app/items/email/${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMyItems(data);
@@ -27,7 +29,7 @@ const MyCrafts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/items/${id}`, {
+        fetch(`https://hero-assignment-10-server-side.vercel.app/items/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

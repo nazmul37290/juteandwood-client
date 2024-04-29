@@ -36,7 +36,7 @@ const AddCrafts = () => {
     };
     console.log(item);
 
-    fetch("http://localhost:4000/items", {
+    fetch("https://hero-assignment-10-server-side.vercel.app/items", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -76,11 +76,6 @@ const AddCrafts = () => {
                   <div className="md:mx-6 md:p-12">
                     {/* <!--Logo--> */}
                     <div className="text-center ">
-                      {/* <img
-                        className="mx-auto w-48"
-                        src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                        alt="logo"
-                      /> */}
                       <h4 className="mb-12 mt-1 pb-1 text-2xl font-bold">
                         ADD CRAFTS
                       </h4>

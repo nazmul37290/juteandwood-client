@@ -1,7 +1,9 @@
 const ErrorPage = () => {
   return (
-    <div>
-      <h1>404 Not found</h1>
+    <div className="min-h-screen flex justify-center items-center">
+      <div className="w-1/2 mx-auto ">
+        <img className="w-full h-full" src="/error.jpg" alt="" />
+      </div>
     </div>
   );
 };
