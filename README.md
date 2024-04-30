@@ -1,8 +1,22 @@
-# React + Vite
+# Jute&Wood
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live website link [https://juteandwood.web.app/](https://juteandwood.web.app/)
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add arts and craft feature
+- update arts and craft
+- Delete arts and craft
+- Items separated by Categories
+- Login with email and password
+- Login with google and github
+- Register for user
+
+## Categories
+
+- Wooden Furniture & Sculptures
+- Wooden HomeDecor
+- Wooden Utensils and Kitchenware
+- Jute Home Decor
+- Jute Kitchenware & utensils
+- Jute and wooden jewellery
