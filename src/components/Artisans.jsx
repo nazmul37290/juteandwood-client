@@ -6,7 +6,7 @@ const Artisans = () => {
       </h1>
       <div className="grid mt-10 grid-cols-1 md:grid-cols-3">
         {/* card one */}
-        <div className="w-[300px] mx-auto md:w-[350px] h-[450px] rounded-2xl bg-[#efeae3]">
+        <div className="w-[300px] mx-auto md:w-[320px] h-[450px] rounded-2xl bg-[#efeae3]">
           {/* upper side */}
           <div className="bg-[#ded5c7] rounded-2xl h-1/2 w-full relative">
             <div className="rounded-full h-[200px] w-[200px] absolute bottom-[-120px] flex translateLeft">
@@ -33,7 +33,7 @@ const Artisans = () => {
           </div>
         </div>
         {/* card two */}
-        <div className="w-[300px] mx-auto md:w-[350px] h-[450px] rounded-2xl bg-[#efeae3]">
+        <div className="w-[300px] mx-auto md:w-[320px] h-[450px] rounded-2xl bg-[#efeae3]">
           {/* upper side */}
           <div className="bg-[#ded5c7] rounded-2xl h-1/2 w-full relative">
             <div className="rounded-full h-[200px] w-[200px] absolute bottom-[-120px] flex translateLeft">
@@ -62,7 +62,7 @@ const Artisans = () => {
           </div>
         </div>
         {/* card three */}
-        <div className="w-[300px] mx-auto md:w-[350px] h-[450px] rounded-2xl bg-[#efeae3]">
+        <div className="w-[300px] mx-auto md:w-[320px] h-[450px] rounded-2xl bg-[#efeae3]">
           {/* upper side */}
           <div className="bg-[#ded5c7] rounded-2xl h-1/2 w-full relative">
             <div className="rounded-full h-[200px] w-[200px] absolute bottom-[-120px] flex translateLeft">
