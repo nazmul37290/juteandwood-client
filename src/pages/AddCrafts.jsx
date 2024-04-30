@@ -87,7 +87,7 @@ const AddCrafts = () => {
 
                       <br />
                       <input
-                        className="p-2 border w-full mb-2 rounded-md"
+                        className="p-2 border w-full mb-2  rounded-md"
                         type="text"
                         name="name"
                         id=""

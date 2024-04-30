@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import CraftItems from "../components/CraftItems";
 import Slider from "../components/Slider";
 import Categories from "../components/Categories";
+import Artisans from "../components/Artisans";
 
 const Homepage = () => {
   const items = useLoaderData();
@@ -14,6 +15,7 @@ const Homepage = () => {
       <div className="max-w-6xl mx-auto">
         <CraftItems items={items}></CraftItems>
         <Categories></Categories>
+        <Artisans></Artisans>
       </div>
     </div>
   );
