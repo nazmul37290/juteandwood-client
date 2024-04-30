@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 const Card = ({ item }) => {
   return (
-    <div className="w-[300px] mx-auto md:w-[320px] h-[520px] rounded-2xl bg-[#efeae3]">
+    <div className="w-[300px] mx-auto md:w-[320px] h-[550px] rounded-2xl bg-[#efeae3]">
       {/* upper side */}
       <div className="bg-[#ded5c7] rounded-2xl w-full relative">
         <div className=" mx-auto p-4 h-[220px] lg:h-[250px] w-[300px] lg:w-[320px] ">
@@ -20,9 +20,13 @@ const Card = ({ item }) => {
       {/* lower side */}
       <div className=" ">
         <div className="px-4 py-4 space-y-1 text-lg">
-          <h3 className="  uppercase min-h-16 overflow-hidden font-bold text-2xl">
+          <h3 className="  uppercase min-h-14 overflow-hidden font-bold text-xl">
             {item.item_name}
           </h3>
+          <p className="h-8 overflow-hidden">
+            <span className="font-semibold">Description: </span>
+            {item.description}
+          </p>
           <div className="">
             <p className="text-black">
               <span className="font-semibold">Category:</span>{" "}

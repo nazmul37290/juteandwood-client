@@ -36,7 +36,7 @@ const Categories = () => {
                   {/* lower side */}
                   <div className=" ">
                     <div className="px-4 py-4 space-y-1 text-lg">
-                      <h3 className="text-[#3C2F19] uppercase min-h-16 overflow-hidden font-bold text-2xl">
+                      <h3 className="text-[#3C2F19] uppercase min-h-16 overflow-hidden font-bold text-xl">
                         {category.sub_category}
                       </h3>
                     </div>
