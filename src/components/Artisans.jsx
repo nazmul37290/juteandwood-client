@@ -86,7 +86,7 @@ const Artisans = () => {
               <p className="text-base mt-4">
                 Crafting with sustainable wood is not just about making
                 beautiful objects; it is about honoring natures gifts and
-                preserving them for generations to come.
+                preserving them for generations to
               </p>
             </div>
           </div>
