@@ -11,8 +11,8 @@ const Categories = () => {
   }, []);
   console.log(categories);
   return (
-    <div>
-      <h1 className="text-3xl text-center uppercase mt-24 font-bold ">
+    <div className="max-w-6xl mx-auto mt-10 ">
+      <h1 className="text-3xl  text-center uppercase font-bold ">
         Art & Craft Categories
       </h1>
       {/* card container */}
