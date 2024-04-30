@@ -55,7 +55,7 @@ const Slider = () => {
                     />
                   </span>
                 </h2>
-                <p className="hidden md:w-[650px] mx-auto text-center text-[#efeae3]">
+                <p className="hidden md:flex md:w-[650px] mx-auto text-center text-[#efeae3]">
                   Jute home decor offers a natural and eco-friendly way to add
                   warmth, texture, and character to living spaces. Jute, a
                   versatile and sustainable fiber derived from the jute plant,
@@ -97,7 +97,7 @@ const Slider = () => {
                     />
                   </span>
                 </h2>
-                <p className=" hidden md:w-[650px] mx-auto text-center text-[#efeae3]">
+                <p className=" hidden md:flex md:w-[650px] mx-auto text-center text-[#efeae3]">
                   Wooden kitchenware offers a timeless and organic aesthetic
                   that adds warmth, charm, and functionality to any kitchen.
                   Crafted from natural wood materials such as maple, cherry,
@@ -133,7 +133,7 @@ const Slider = () => {
                     />
                   </span>
                 </h2>
-                <p className="hidden md:w-[650px] mx-auto text-center text-[#efeae3]">
+                <p className="hidden md:flex md:w-[650px] mx-auto text-center text-[#efeae3]">
                   Wooden sculptures are exquisite works of art crafted from wood
                   through carving, shaping, and sculpting techniques. Dating
                   back thousands of years, wooden sculpture has been a prominent

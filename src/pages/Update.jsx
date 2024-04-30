@@ -84,7 +84,7 @@ const Update = () => {
       >
         <span className="loading loading-spinner loading-lg"></span>
       </div>
-      <div className="container mx-auto w-full md:w-1/2 h-full p-2 md:p-10">
+      <div className="container mx-auto w-full lg:w-1/2 h-full p-2 md:p-10">
         <div className=" flex w-full h-full items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
             <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
