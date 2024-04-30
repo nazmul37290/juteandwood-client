@@ -88,6 +88,12 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3  p-2 shadow bg-white text-black  z-10 rounded-box w-52 font-bold"
           >
             {links}
+            <li>
+              <Link to={"/login"}>Login</Link>
+            </li>
+            <li>
+              <Link to={"/register"}>Register</Link>
+            </li>
           </ul>
         </div>
         <a className="btn btn-ghost text-2xl font-bold">Jute&Wood</a>
@@ -96,7 +102,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 font-bold">{links}</ul>
       </div>
       {user ? (
-        <div className="hidden md:flex navbar-end  gap-2">
+        <div className="flex navbar-end  gap-2">
           <>
             <label className="cursor-pointer grid place-items-center">
               <input
