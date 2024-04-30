@@ -3,6 +3,7 @@ import "../index.css";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
+import { toast } from "react-toastify";
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [theme, setTheme] = useState("light");
@@ -22,7 +23,9 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     logOut()
-      .then(() => {})
+      .then(() => {
+        toast.success("Logged out successfully");
+      })
       .catch((error) => {
         console.log(error);
       });
@@ -88,12 +91,39 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content mt-3  p-2 shadow bg-white text-black  z-10 rounded-box w-52 font-bold"
           >
             {links}
-            <li>
-              <Link to={"/login"}>Login</Link>
-            </li>
-            <li>
-              <Link to={"/register"}>Register</Link>
-            </li>
+            {user ? (
+              <>
+                <button
+                  onClick={handleLogOut}
+                  className="btn btn-link bg-[#bdac8f] text-white font-bold"
+                >
+                  Logout
+                </button>
+                <div className="w-12 h-12 rounded-full">
+                  <Tooltip
+                    anchorSelect=".my-anchor-element"
+                    className="z-10"
+                    place="top"
+                  >
+                    {user.displayName}
+                  </Tooltip>
+                  <img
+                    className="rounded-full my-anchor-element w-full h-full"
+                    src={user && user.photoURL}
+                    alt="profile"
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to={"/login"}>Login</Link>
+                </li>
+                <li>
+                  <Link to={"/register"}>Register</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <a className="btn btn-ghost text-2xl font-bold">Jute&Wood</a>
@@ -102,7 +132,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 font-bold">{links}</ul>
       </div>
       {user ? (
-        <div className="flex navbar-end  gap-2">
+        <div className="hidden lg:flex navbar-end  gap-2">
           <>
             <label className="cursor-pointer grid place-items-center">
               <input

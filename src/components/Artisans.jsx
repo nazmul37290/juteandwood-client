@@ -1,10 +1,10 @@
 const Artisans = () => {
   return (
     <div>
-      <h1 className="text-3xl mt-24 uppercase font-bold text-center">
+      <h1 className="text-lg lg:text-3xl mt-24 uppercase font-bold text-center">
         Meet Our Artisans
       </h1>
-      <div className="grid mt-10 grid-cols-1 md:grid-cols-3">
+      <div className="grid mt-10 grid-cols-1 gap-4 md:grid-cols-3">
         {/* card one */}
         <div className="w-[300px] mx-auto md:w-[320px] h-[450px] rounded-2xl bg-[#efeae3]">
           {/* upper side */}

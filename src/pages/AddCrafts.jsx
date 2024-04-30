@@ -66,13 +66,13 @@ const AddCrafts = () => {
       >
         <span className="loading loading-spinner loading-lg"></span>
       </div>
-      <div className="container mx-auto w-1/2 h-full p-10">
+      <div className="container mx-auto w-full md:w-1/2 h-full p-2 md:p-10">
         <div className=" flex w-full h-full items-center justify-center text-neutral-800 dark:text-neutral-200">
           <div className="w-full">
             <div className="block rounded-lg bg-white shadow-lg dark:bg-neutral-800">
               <div className="">
                 {/* <!-- Left column container--> */}
-                <div className="px-4 md:px-0 w-full  ">
+                <div className="px-4 py-4 md:py-0 md:px-0 w-full  ">
                   <div className="md:mx-6 md:p-12">
                     {/* <!--Logo--> */}
                     <div className="text-center ">

@@ -11,7 +11,7 @@ const Categories = () => {
   }, []);
   console.log(categories);
   return (
-    <div className="max-w-6xl mx-auto mt-10 ">
+    <div className="max-w-6xl mx-auto  mt-10 ">
       <h1 className=" text-lg md:text-3xl  text-center uppercase font-bold ">
         Art & Craft Categories
       </h1>
@@ -21,7 +21,7 @@ const Categories = () => {
           return (
             <>
               <Link to={`/categories/${category.sub_category}`}>
-                <div className="w-[300px] mx-auto md:w-[320px] h-[350px] rounded-2xl bg-[#efeae3]">
+                <div className="w-[300px] mx-auto mb-2 md:w-[320px] h-[350px] rounded-2xl bg-[#cec1ab]">
                   {/* upper side */}
                   <div className="bg-[#ded5c7] rounded-2xl w-full relative">
                     <div className=" mx-auto p-4 h-[220px] lg:h-[250px] w-[300px] lg:w-[320px] ">

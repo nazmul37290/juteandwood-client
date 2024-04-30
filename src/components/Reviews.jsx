@@ -10,9 +10,11 @@ import "../index.css";
 
 const Reviews = () => {
   return (
-    <div className="mt-24">
-      <h1 className="text-3xl  text-center uppercase font-bold ">Reviews</h1>
-      <div className="mt-20 ">
+    <div className=" mt-10 md:mt-24 ">
+      <h1 className="text-lg md:text-3xl  text-center uppercase font-bold ">
+        Reviews
+      </h1>
+      <div className=" mt-5 md:mt-20 ">
         <Swiper
           navigation={true}
           modules={[Navigation]}
@@ -23,7 +25,7 @@ const Reviews = () => {
           className="mySwiper"
         >
           <SwiperSlide>
-            <div className="bg-[#efeae3] flex py-5 px-10 gap-5 rounded-2xl justify-center">
+            <div className="bg-[#efeae3] flex flex-col md:flex-row py-5 px-10 gap-5 rounded-2xl justify-center">
               <div className="h-[250px] w-[300px]">
                 <img
                   src="/3.jpg"
@@ -32,7 +34,7 @@ const Reviews = () => {
                 />
               </div>
 
-              <div className="w-1/2">
+              <div className="w-auto md:w-1/2">
                 <h1 className="font-bold text-xl">Review by Sarah Woods</h1>
                 <p className="font-semibold text-base">Interior Designer</p>
                 <p className="p-4">
@@ -50,7 +52,7 @@ const Reviews = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-[#efeae3] flex py-5 px-10 gap-5 rounded-2xl justify-center items-center">
+            <div className="bg-[#efeae3] flex flex-col md:flex-row py-5 px-10 gap-5 rounded-2xl justify-center items-center">
               <div className="h-[250px] w-[300px]">
                 <img
                   src="/1.jpg"
@@ -59,7 +61,7 @@ const Reviews = () => {
                 />
               </div>
 
-              <div className="w-1/2">
+              <div className="w-auto md:w-1/2">
                 <h1 className="font-bold text-xl">Review by David Carpenter</h1>
                 <p className="font-semibold text-base">DIY Enthusiast</p>
                 <p className="p-4">
@@ -77,7 +79,7 @@ const Reviews = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-[#efeae3] flex py-5 px-10 gap-5 rounded-2xl justify-center ">
+            <div className="bg-[#efeae3] flex flex-col md:flex-row py-5 px-10 gap-5 rounded-2xl justify-center ">
               <div className="h-[250px] w-[300px]">
                 <img
                   src="/2.jpg"
@@ -86,7 +88,7 @@ const Reviews = () => {
                 />
               </div>
 
-              <div className="w-1/2">
+              <div className="w-auto md:w-1/2">
                 <h1 className="font-bold text-xl">Review by Emily Weaver</h1>
                 <p className="font-semibold text-base">Home Decor Enthusiast</p>
                 <p className="p-4">

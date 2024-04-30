@@ -16,7 +16,7 @@ const Homepage = () => {
       <div className="max-w-6xl mx-auto">
         <CraftItems items={items}></CraftItems>
       </div>
-      <div className="bg-[#efeae3] p-10 mt-10">
+      <div className="bg-[#efeae3] p-2 md:p-10 mt-10">
         <Categories></Categories>
       </div>
       <div className="max-w-6xl mx-auto">
