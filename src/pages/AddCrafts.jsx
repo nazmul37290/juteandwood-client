@@ -155,7 +155,7 @@ const AddCrafts = () => {
                         </option>
                         <option value="Jute Home Decor">Jute Home Decor</option>
                         <option value="JuteKitchenware & utensils">
-                          JuteKitchenware & utensils
+                          Jute Kitchenware & utensils
                         </option>
                         <option value="Jute and wooden jewellery">
                           Jute and wooden jewellery

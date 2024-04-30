@@ -32,7 +32,7 @@ const Footer = () => {
           <a className="link link-hover">Press kit</a>
         </nav>
         <nav>
-          <h6 className="footer-title">Social</h6>
+          <h6 className="uppercase text-lg font-bold">Socials</h6>
           <div className="grid grid-flow-col gap-4">
             <a>
               <svg

@@ -10,6 +10,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import ItemDetails from "../pages/ItemDetails";
 import ErrorPage from "../pages/ErrorPage";
 import Update from "../pages/Update";
+import CategoryItems from "../pages/CategoryItems";
 
 const Routes = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const Routes = createBrowserRouter([
           fetch(
             `https://hero-assignment-10-server-side.vercel.app/items/${params.id}`
           ),
+      },
+      {
+        path: "/categories/:name",
+        element: <CategoryItems></CategoryItems>,
       },
     ],
   },
