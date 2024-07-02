@@ -25,10 +25,10 @@ const Register = () => {
       setError("password must be more than 6 characters");
       return;
     } else if (!/[a-z]/.test(password)) {
-      setError("must have a small letter");
+      setError("password must have a small letter");
       return;
     } else if (!/[A-Z]/.test(password)) {
-      setError("must have a capital letter");
+      setError("password must have a capital letter");
       return;
     }
     setLoading(true);
