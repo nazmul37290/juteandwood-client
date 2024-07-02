@@ -2,6 +2,8 @@
 
 Live website link [https://juteandwood.web.app/](https://juteandwood.web.app/)
 
+
+
 ## Features
 
 - Add arts and craft feature
@@ -20,3 +22,9 @@ Live website link [https://juteandwood.web.app/](https://juteandwood.web.app/)
 - Jute Home Decor
 - Jute Kitchenware & utensils
 - Jute and wooden jewellery
+
+## How to run this repo locally
+
+- install node js 
+- add this command to project folder "npm i"
+- then add another command "npm run dev"
