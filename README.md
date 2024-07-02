@@ -2,7 +2,8 @@
 
 Live website link [https://juteandwood.web.app/](https://juteandwood.web.app/)
 
-
+#overview
+In this website user can add his/her jute and wood related arts and crafts. user can manage his own posts.
 
 ## Features
 
@@ -22,6 +23,16 @@ Live website link [https://juteandwood.web.app/](https://juteandwood.web.app/)
 - Jute Home Decor
 - Jute Kitchenware & utensils
 - Jute and wooden jewellery
+
+## Technologies used
+- html
+- react
+- express
+- node js
+- mongodb
+- tailwind css
+- firebase
+- other npm packages
 
 ## How to run this repo locally
 
